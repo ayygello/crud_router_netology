@@ -20,6 +20,7 @@ const Feed = () => {
     };
   }, []);
 
+  // Варинт 3
   // const addNewPost = (post) => {
   //   const addedPost = { post: post };
 

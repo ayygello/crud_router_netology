@@ -3,9 +3,10 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import './CustomAddForm.css';
 
-const CustomPostForm = () => {
+const CustomPostForm = ({ onAdd }) => {
   const [content, setContent] = useState('');
 
+  // Вариант 1
   const newPost = () => {
     axios
       .post('http://localhost:7777/posts', content)
@@ -29,6 +30,8 @@ const CustomPostForm = () => {
         </div>
         <Link to={'*'}>
           <button className='publish-button' onClick={newPost}>
+            {/* Ниже кнопка с вариантом 2 */}
+            {/* <button className='publish-button' onClick={() => onAdd(content)}></button> */}
             Опубликовать
           </button>
         </Link>
