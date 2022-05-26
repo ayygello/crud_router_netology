@@ -1,0 +1,89 @@
+.post-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  background-color: #ffffff;
+  margin-top: 7px;
+  margin-bottom: 10px;
+  padding: 8px;
+  border-radius: 5px;
+}
+
+.post-header {
+  display: flex;
+}
+
+.name-created {
+  display: flex;
+  flex-direction: column;
+}
+
+.name {
+  color: #0176fe;
+  font-size: 12px;
+}
+
+.created {
+  color: #85929f;
+  font-size: 10px;
+  padding-bottom: 10px;
+}
+
+.avatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}
+
+.header-content {
+  margin: 0 5px;
+}
+
+.post-content {
+  color: black;
+  font-size: 20px;
+}
+
+.post-buttons-wrapper {
+  display: flex;
+  justify-content: space-around;
+  border-top: 1px solid #85929f;
+  border-bottom: 1px solid #85929f;
+}
+
+.post-button {
+  margin: 5px 0;
+  cursor: pointer;
+  border: none;
+  background-color: white;
+  color: #85929f;
+}
+
+.actions-wrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.action-button {
+  margin-top: 5px;
+  margin-right: 7px;
+  border: none;
+  border-radius: 3px;
+  color: white;
+  padding: 3px 7px;
+  cursor: pointer;
+}
+
+.change {
+  background-color: #0077ff;
+}
+
+.delete {
+  background-color: red;
+}
+
+.single-post {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}

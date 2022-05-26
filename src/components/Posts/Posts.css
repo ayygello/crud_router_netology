@@ -1,0 +1,30 @@
+.mini-avatar {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+}
+
+.post-footer {
+  margin: 10px 0 0;
+  display: flex;
+}
+
+.post-footer-input {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background-color: #edeef0;
+  border-radius: 16px;
+  margin-left: 5px;
+}
+
+.comment-input {
+  width: 100%;
+  background-color: #edeef0;
+  border: none;
+  margin-left: 10px;
+}
+
+.action-footer {
+  margin-right: 10px;
+}
