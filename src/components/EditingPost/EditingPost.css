@@ -1,0 +1,60 @@
+.cancel-edit {
+  background-color: #edeef0;
+}
+
+.edit-wrapper {
+  width: 400px;
+  border: 1px solid #efd0d0;
+}
+
+.h-c {
+  margin: 0;
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+.edit-header {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+}
+
+.edit-content {
+  display: flex;
+  width: 400px;
+  background-color: #ffffff;
+  margin-top: 7px;
+  padding: 15px 0 8px;
+  align-items: center;
+}
+
+.edit-avatar {
+  margin-bottom: 7px;
+  margin-right: 25px;
+  margin-left: 10px;
+}
+
+.action-wrapper {
+  column-count: 2;
+  background-color: #ffffff;
+  padding: 10px 5px;
+  border-top: 1px solid #baa9a9;
+}
+
+.edit-action {
+  width: 100%;
+  text-align: start;
+  border-radius: 10px;
+  border: none;
+  padding: 3px;
+  margin: 5px 0;
+  cursor: pointer;
+  color: #54595f;
+}
+
+.footer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 5px;
+  border-top: 1px solid #baa9a9;
+}

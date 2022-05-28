@@ -1,26 +1,15 @@
-import React, { useEffect, useState } from 'react';
-import './Post.css';
+import React, { useContext } from 'react';
+import { Link, useParams } from 'react-router-dom';
 import moment from 'moment';
 import 'moment/locale/ru';
-import { Link, useParams } from 'react-router-dom';
-import initialValues from '../../initialValues/initialValues';
+import './Post.css';
+import FeedContext from '../../contexts/FeedContext';
 
 const Post = () => {
-  // const [post, setPost] = useState(null);
+  const { feed, handleOnDelete } = useContext(FeedContext);
   const { postId } = useParams();
 
-  const post = initialValues[postId];
-
-  // useEffect(() => {
-  //   const timeout = setTimeout(() => {
-  //     axios.get(`http://localhost:7777/posts/${postId}`).then((res) => {
-  //       setPost(res.data);
-  //     });
-  //   }, 1000);
-  //   return () => {
-  //     clearTimeout(timeout);
-  //   };
-  // }, []);
+  const post = feed[postId];
 
   return (
     <div className='wrapper single-post'>
@@ -29,6 +18,7 @@ const Post = () => {
           <img
             className='avatar'
             src='https://oir.mobi/uploads/posts/2021-04/1619630471_41-oir_mobi-p-litso-kota-zhivotnie-krasivo-foto-44.jpg'
+            alt='avatar'
           />
           <div className='name-created'>
             <p className='header-content name'>
@@ -45,10 +35,17 @@ const Post = () => {
           <button className='post-button'>✉ Комментировать</button>
         </div>
         <div className='actions-wrapper'>
-          <button className='action-button change'>Изменить</button>
+          <Link to={`/posts/edit/${postId}`}>
+            <button className='action-button change'>Изменить</button>
+          </Link>
           <Link to={'*'}>
             {' '}
-            <button className='action-button delete'>Удалить</button>
+            <button
+              className='action-button delete'
+              onClick={() => handleOnDelete(post.id)}
+            >
+              Удалить
+            </button>
           </Link>
         </div>
       </div>

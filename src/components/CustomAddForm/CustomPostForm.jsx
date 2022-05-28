@@ -1,17 +1,11 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
 import './CustomAddForm.css';
+import FeedContext from '../../contexts/FeedContext';
 
-const CustomPostForm = ({ onAdd }) => {
+const CustomPostForm = () => {
   const [content, setContent] = useState('');
-
-  // Вариант 1
-  const newPost = () => {
-    axios
-      .post('http://localhost:7777/posts', content)
-      .then((res) => console.log(res));
-  };
+  const { handleOnAdd } = useContext(FeedContext);
 
   return (
     <div className='wrapper single-post'>
@@ -29,9 +23,10 @@ const CustomPostForm = ({ onAdd }) => {
           />
         </div>
         <Link to={'*'}>
-          <button className='publish-button' onClick={newPost}>
-            {/* Ниже кнопка с вариантом 2 */}
-            {/* <button className='publish-button' onClick={() => onAdd(content)}></button> */}
+          <button
+            className='publish-button'
+            onClick={() => handleOnAdd(content)}
+          >
             Опубликовать
           </button>
         </Link>
