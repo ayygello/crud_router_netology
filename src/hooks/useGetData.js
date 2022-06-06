@@ -6,14 +6,12 @@ const useGetData = (url, initialData) => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const getData = setTimeout(() => {
-      setIsLoading(false);
-      axios.get(url).then((res) => setData(() => res.data));
-    }, 1000);
+    setIsLoading(false);
+    axios.get(url).then((res) => setData(res.data));
     return () => {
-      clearTimeout(getData);
+      setIsLoading(true);
     };
-  }, [data]);
+  }, [url]);
 
   return [data, isLoading];
 };

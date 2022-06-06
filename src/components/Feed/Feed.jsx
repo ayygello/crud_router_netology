@@ -14,13 +14,13 @@ const Feed = () => {
       <div>
         {(loading && <progress />) ||
           Object.entries(feed).map(([postId, post]) => (
-            <Link to={`/posts/${postId}`} style={{ textDecoration: 'none' }}>
+            <Link
+              to={`/posts/${postId}`}
+              key={postId}
+              style={{ textDecoration: 'none' }}
+            >
               {' '}
-              <Posts
-                key={postId}
-                content={post.content}
-                created={post.created}
-              />{' '}
+              <Posts content={post.content} created={post.created} />{' '}
             </Link>
           ))}
       </div>
